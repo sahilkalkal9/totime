@@ -68,7 +68,7 @@
     		background: white;
     		opacity:1;
     	}
-    	button#two,#three{
+    	button#two,#three,#four{
     		border-radius:10px;
     		background-color: transparent;
     	}
@@ -99,6 +99,7 @@
 		<input type="text" name="inputs" id="one" placeholder=" Write your goals"><br><br>
 		<button type="submit" class="btn btn-success" id="two">Add Todo </button>
 		<button type="submit" class="btn btn-danger" id="three">Clear Todo List </button>
+		<button type="submit" class="btn btn-success" id="four">Want to change name?? </button>
 		<!-- <button type="submit" class="btn btn-success" id="twoo">Cheched Are Done </button> -->
 	</div><br>
 	<div id="second">
@@ -153,6 +154,11 @@ setInterval(clock, 1000);
 // for todo list
 if(localStorage.getItem("user")===null) { var name=prompt("Please, enter your name here?");   localStorage.setItem("user", name)}
 else {name=localStorage.getItem("user")}
+	document.getElementById("four").addEventListener('click',(event)=>{
+		localStorage.removeItem("user")
+		 name=prompt("Please, enter your name here?");
+		 localStorage.setItem("user", name)
+	})
 let arr=[],ul ;
 function addItem(str){       ul = document.getElementById("list")
         var textnode=document.createTextNode(str)
